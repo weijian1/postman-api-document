@@ -1,0 +1,972 @@
+{
+	"info": {
+		"_postman_id": "cbaf0ee6-6626-2bf5-1a60-ca4a10905210",
+		"name": "postman-api-doc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "新闻分类",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"eval(postman.getEnvironmentVariable(\"fn_timestamp\"));",
+									"eval(postman.getEnvironmentVariable(\"fn_sign\"));",
+									"postman.setEnvironmentVariable(\"timestamp\", timestamp);",
+									"postman.setEnvironmentVariable(\"sign\", sign);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{domain}}api/v1/News/Category?timestamp={{timestamp}}&sign={{sign}}",
+							"host": [
+								"{{domain}}api"
+							],
+							"path": [
+								"v1",
+								"News",
+								"Category"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}",
+									"description": "时间戳"
+								},
+								{
+									"key": "sign",
+									"value": "{{sign}}",
+									"description": "签名"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "新闻分类",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{domain}}api/v1/News/Category?timestamp={{timestamp}}&sign={{sign}}",
+									"host": [
+										"{{domain}}api"
+									],
+									"path": [
+										"v1",
+										"News",
+										"Category"
+									],
+									"query": [
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}",
+											"description": "时间戳"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}",
+											"description": "签名"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "Keep-Alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "1120",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 29 Dec 2017 03:35:22 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=5, max=100",
+									"name": "keep-alive",
+									"description": "Custom header"
+								},
+								{
+									"key": "server",
+									"value": "Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/5.6.31",
+									"name": "x-powered-by",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"body": "{\"return_code\":0,\"message\":\"成功\",\"data\":[{\"id\":1,\"name\":\"新闻分类1\",\"icon\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20171225\\/57b4071e762a66515b7b82bf699838e1.png\",\"head_image\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20171225\\/57b4071e762a66515b7b82bf699838e1.png\",\"description\":\"这里是描述\",\"order_index\":1,\"create_time\":\"2017-12-27 12:09:24\",\"update_time\":\"2017-12-27 12:09:24\",\"delete_time\":null},{\"id\":2,\"name\":\"新闻分类2\",\"icon\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20171225\\/57b4071e762a66515b7b82bf699838e1.png\",\"head_image\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20171225\\/57b4071e762a66515b7b82bf699838e1.png\",\"description\":\"这里是描述\",\"order_index\":2,\"create_time\":\"2017-12-27 12:09:44\",\"update_time\":\"2017-12-27 12:09:44\",\"delete_time\":null},{\"id\":3,\"name\":\"分类33\",\"icon\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20171225\\/57b4071e762a66515b7b82bf699838e1.png\",\"head_image\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20171225\\/57b4071e762a66515b7b82bf699838e1.png\",\"description\":\"描述\",\"order_index\":3,\"create_time\":\"2017-12-27 12:36:37\",\"update_time\":\"2017-12-27 12:36:43\",\"delete_time\":null}]}"
+						}
+					]
+				},
+				{
+					"name": "新闻列表",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"eval(postman.getEnvironmentVariable(\"fn_timestamp\"));",
+									"eval(postman.getEnvironmentVariable(\"fn_sign\"));",
+									"postman.setEnvironmentVariable(\"timestamp\", timestamp);",
+									"postman.setEnvironmentVariable(\"sign\", sign);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{domain}}api/v1/News/List?page=1&timestamp={{timestamp}}&sign={{sign}}",
+							"host": [
+								"{{domain}}api"
+							],
+							"path": [
+								"v1",
+								"News",
+								"List"
+							],
+							"query": [
+								{
+									"key": "news_category_id",
+									"value": "1",
+									"description": "新闻分类编号",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "最新",
+									"description": "关键字",
+									"disabled": true
+								},
+								{
+									"key": "is_recommend",
+									"value": "1",
+									"description": "是否推荐",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "页码"
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}",
+									"description": "时间戳"
+								},
+								{
+									"key": "sign",
+									"value": "{{sign}}",
+									"description": "签名"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "新闻列表",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{domain}}api/v1/News/List?news_category_id=1&keyword=最新&is_recommend=1&timestamp={{timestamp}}&sign={{sign}}",
+									"host": [
+										"{{domain}}api"
+									],
+									"path": [
+										"v1",
+										"News",
+										"List"
+									],
+									"query": [
+										{
+											"key": "news_category_id",
+											"value": "1",
+											"description": "新闻分类编号"
+										},
+										{
+											"key": "keyword",
+											"value": "最新",
+											"description": "关键字"
+										},
+										{
+											"key": "is_recommend",
+											"value": "1",
+											"description": "是否推荐"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}",
+											"description": "时间戳"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}",
+											"description": "签名"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "Keep-Alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "365",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 29 Dec 2017 03:42:25 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=5, max=100",
+									"name": "keep-alive",
+									"description": "Custom header"
+								},
+								{
+									"key": "server",
+									"value": "Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/5.6.31",
+									"name": "x-powered-by",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"body": "{\"return_code\":0,\"message\":\"成功\",\"data\":{\"total\":1,\"per_page\":15,\"current_page\":1,\"last_page\":1,\"data\":[{\"id\":3,\"news_category_id\":1,\"name\":\"最新新闻\",\"pic\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20171228\\/a23585fea331a6ab58065d0871fec7d9.jpg\",\"clicks\":0,\"is_recommend\":1,\"create_time\":\"2017-12-29 11:41:40\",\"news_category\":{\"id\":1,\"name\":\"新闻分类1\"}}]}}"
+						}
+					]
+				},
+				{
+					"name": "新闻详情",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"eval(postman.getEnvironmentVariable(\"fn_timestamp\"));",
+									"eval(postman.getEnvironmentVariable(\"fn_sign\"));",
+									"postman.setEnvironmentVariable(\"timestamp\", timestamp);",
+									"postman.setEnvironmentVariable(\"sign\", sign);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{domain}}/api/v1/News/Info?id=3&timestamp={{timestamp}}&sign={{sign}}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"News",
+								"Info"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "新闻编号"
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}",
+									"description": "时间戳"
+								},
+								{
+									"key": "sign",
+									"value": "{{sign}}",
+									"description": "签名"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "新闻详情",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{domain}}/api/v1/News/Info?id=3&timestamp={{timestamp}}&sign={{sign}}",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"News",
+										"Info"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3",
+											"description": "新闻编号"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}",
+											"description": "时间戳"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}",
+											"description": "签名"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "connection",
+									"value": "Keep-Alive",
+									"name": "connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "content-length",
+									"value": "349",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 29 Dec 2017 03:48:49 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=5, max=100",
+									"name": "keep-alive",
+									"description": "Custom header"
+								},
+								{
+									"key": "server",
+									"value": "Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/5.6.31",
+									"name": "x-powered-by",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"body": "{\"return_code\":0,\"message\":\"成功\",\"data\":{\"id\":3,\"news_category_id\":1,\"name\":\"最新新闻\",\"pic\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20171228\\/a23585fea331a6ab58065d0871fec7d9.jpg\",\"clicks\":0,\"contents\":\"<p>这里是新闻详情<\\/p>\",\"is_recommend\":1,\"create_time\":\"2017-12-29 11:41:40\",\"update_time\":\"2017-12-29 11:42:08\",\"delete_time\":null}}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Information",
+			"item": [
+				{
+					"name": "Information",
+					"item": [
+						{
+							"name": "信息分类",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"eval(postman.getEnvironmentVariable(\"fn_timestamp\"));",
+											"eval(postman.getEnvironmentVariable(\"fn_sign\"));",
+											"postman.setEnvironmentVariable(\"timestamp\", timestamp);",
+											"postman.setEnvironmentVariable(\"sign\", sign);"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{domain}}api/v1/Information/Information/Category?timestamp={{timestamp}}&sign={{sign}}",
+									"host": [
+										"{{domain}}api"
+									],
+									"path": [
+										"v1",
+										"Information",
+										"Information",
+										"Category"
+									],
+									"query": [
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "信息分类",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{domain}}api/v1/Information/Category?timestamp={{timestamp}}&sign={{sign}}",
+											"host": [
+												"{{domain}}api"
+											],
+											"path": [
+												"v1",
+												"Information",
+												"Category"
+											],
+											"query": [
+												{
+													"key": "timestamp",
+													"value": "{{timestamp}}",
+													"description": "时间戳"
+												},
+												{
+													"key": "sign",
+													"value": "{{sign}}",
+													"description": "签名"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive",
+											"name": "Connection",
+											"description": "Options that are desired for the connection"
+										},
+										{
+											"key": "Content-Length",
+											"value": "167",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Jan 2018 09:07:14 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100",
+											"name": "Keep-Alive",
+											"description": "Custom header"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31",
+											"name": "Server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/5.6.31",
+											"name": "X-Powered-By",
+											"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+										}
+									],
+									"cookie": [],
+									"body": "{\"return_code\":0,\"message\":\"成功\",\"data\":[{\"id\":1,\"name\":\"默认分类\",\"create_time\":\"2017-12-29 18:17:46\",\"update_time\":\"2017-12-29 18:17:46\",\"delete_time\":null}]}"
+								}
+							]
+						},
+						{
+							"name": "信息详情",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"eval(postman.getEnvironmentVariable(\"fn_timestamp\"));",
+											"eval(postman.getEnvironmentVariable(\"fn_sign\"));",
+											"postman.setEnvironmentVariable(\"timestamp\", timestamp);",
+											"postman.setEnvironmentVariable(\"sign\", sign);"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{domain}}/api/v1/Information/Information/Info?id=1&timestamp={{timestamp}}&sign={{sign}}",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Information",
+										"Information",
+										"Info"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "信息详情",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{domain}}/api/v1/Information/Info?id=1&timestamp={{timestamp}}&sign={{sign}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"Information",
+												"Info"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "新闻编号"
+												},
+												{
+													"key": "timestamp",
+													"value": "{{timestamp}}",
+													"description": "时间戳"
+												},
+												{
+													"key": "sign",
+													"value": "{{sign}}",
+													"description": "签名"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive",
+											"name": "Connection",
+											"description": "Options that are desired for the connection"
+										},
+										{
+											"key": "Content-Length",
+											"value": "853",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Jan 2018 09:11:16 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=99",
+											"name": "Keep-Alive",
+											"description": "Custom header"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31",
+											"name": "Server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/5.6.31",
+											"name": "X-Powered-By",
+											"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+										}
+									],
+									"cookie": [],
+									"body": "{\"return_code\":0,\"message\":\"成功\",\"data\":{\"id\":1,\"info_category_id\":1,\"name\":\"关于我们\",\"input_type\":\"textarea\",\"contents\":\"<p><span style=\\\"color: rgb(255, 156, 0);\\\">这里是关于我们<\\/span><\\/p><p><span style=\\\"color: rgb(255, 156, 0);\\\"><br><\\/span><\\/p><p><span style=\\\"color: rgb(255, 156, 0);\\\">dasf<\\/span><\\/p><p><span style=\\\"color: rgb(255, 156, 0);\\\">asf<\\/span><\\/p><p><span style=\\\"color: rgb(255, 156, 0);\\\">a<\\/span><\\/p><p><span style=\\\"color: rgb(255, 156, 0);\\\">fd<\\/span><\\/p><p><span style=\\\"color: rgb(255, 156, 0);\\\">asf<\\/span><\\/p><p><span style=\\\"color: rgb(255, 156, 0);\\\">asd<\\/span><\\/p><p><span style=\\\"color: rgb(255, 156, 0);\\\">f<\\/span><\\/p><p><span style=\\\"color: rgb(255, 156, 0);\\\">asdfasfda<br><\\/span><br><\\/p>\",\"create_time\":\"2018-01-05 15:59:07\",\"update_time\":\"2018-01-05 16:49:50\",\"delete_time\":null}}"
+								},
+								{
+									"name": "信息详情",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{domain}}/api/v1/Information/Info?id=1&timestamp={{timestamp}}&sign={{sign}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"Information",
+												"Info"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "新闻编号"
+												},
+												{
+													"key": "timestamp",
+													"value": "{{timestamp}}",
+													"description": "时间戳"
+												},
+												{
+													"key": "sign",
+													"value": "{{sign}}",
+													"description": "签名"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive",
+											"name": "Connection",
+											"description": ""
+										},
+										{
+											"key": "Content-Length",
+											"value": "349",
+											"name": "Content-Length",
+											"description": ""
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": ""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Mar 2018 03:26:28 GMT",
+											"name": "Date",
+											"description": ""
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100",
+											"name": "Keep-Alive",
+											"description": ""
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31",
+											"name": "Server",
+											"description": ""
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/5.6.31",
+											"name": "X-Powered-By",
+											"description": ""
+										}
+									],
+									"cookie": [
+										{
+											"expires": "Tue Jan 19 2038 11:14:07 GMT+0800 (中国标准时间)",
+											"httpOnly": false,
+											"domain": "fastadmindemo.dev",
+											"path": "/",
+											"secure": false,
+											"value": "lujgjemqp8i7fi8bslpi54hjk0",
+											"key": "PHPSESSID"
+										}
+									],
+									"body": "{\"return_code\":0,\"message\":\"成功\",\"data\":{\"id\":1,\"info_category_id\":1,\"name\":\"品牌故事\",\"pic\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20180302\\/57b4071e762a66515b7b82bf699838e1.png\",\"input_type\":\"textarea\",\"contents\":\"<p>这里是品牌故事<br><\\/p>\",\"create_time\":\"2018-03-02 11:00:35\",\"update_time\":\"2018-03-02 11:17:31\",\"delete_time\":null}}"
+								}
+							]
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Banner",
+					"item": [
+						{
+							"name": "焦点图",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ef9b85db-455f-4d5c-a3d8-15575fc86951",
+										"type": "text/javascript",
+										"exec": [
+											"eval(postman.getEnvironmentVariable(\"fn_timestamp\"));",
+											"eval(postman.getEnvironmentVariable(\"fn_sign\"));",
+											"postman.setEnvironmentVariable(\"timestamp\", timestamp);",
+											"postman.setEnvironmentVariable(\"sign\", sign);"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{domain}}/api/v1/Information/Banner/List?timestamp={{timestamp}}&sign={{sign}}",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Information",
+										"Banner",
+										"List"
+									],
+									"query": [
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}",
+											"description": "时间戳"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}",
+											"description": "签名"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "焦点图",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "{{domain}}/api/v1/Information/Banner/List?timestamp={{timestamp}}&sign={{sign}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"Information",
+												"Banner",
+												"List"
+											],
+											"query": [
+												{
+													"key": "timestamp",
+													"value": "{{timestamp}}",
+													"description": "时间戳"
+												},
+												{
+													"key": "sign",
+													"value": "{{sign}}",
+													"description": "签名"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive",
+											"name": "Connection",
+											"description": ""
+										},
+										{
+											"key": "Content-Length",
+											"value": "712",
+											"name": "Content-Length",
+											"description": ""
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": ""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Mar 2018 10:08:56 GMT",
+											"name": "Date",
+											"description": ""
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100",
+											"name": "Keep-Alive",
+											"description": ""
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31",
+											"name": "Server",
+											"description": ""
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/5.6.31",
+											"name": "X-Powered-By",
+											"description": ""
+										}
+									],
+									"cookie": [
+										{
+											"expires": "Tue Jan 19 2038 11:14:07 GMT+0800 (中国标准时间)",
+											"httpOnly": false,
+											"domain": "fastadmindemo.dev",
+											"path": "/",
+											"secure": false,
+											"value": "lujgjemqp8i7fi8bslpi54hjk0",
+											"key": "PHPSESSID"
+										}
+									],
+									"body": "{\"return_code\":0,\"message\":\"成功\",\"data\":[{\"id\":2,\"name\":\"焦点图\",\"pic\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20180302\\/57b4071e762a66515b7b82bf699838e1.png\",\"link\":\"\",\"create_time\":\"2018-03-03 17:55:04\",\"update_time\":\"2018-03-03 17:55:04\",\"delete_time\":null},{\"id\":3,\"name\":\"焦点图\",\"pic\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20180303\\/516a75c459864b746b7c3163c998b9d9.png\",\"link\":\"\",\"create_time\":\"2018-03-03 17:58:00\",\"update_time\":\"2018-03-03 17:58:00\",\"delete_time\":null},{\"id\":4,\"name\":\"焦点图1212\",\"pic\":\"http:\\/\\/fastadmindemo.dev\\/uploads\\/20180303\\/711608b12b34fea6a6c18f1749a901f1.png\",\"link\":\"\",\"create_time\":\"2018-03-03 17:58:54\",\"update_time\":\"2018-03-03 17:59:04\",\"delete_time\":null}]}"
+								}
+							]
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
