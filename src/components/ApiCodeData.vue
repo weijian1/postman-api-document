@@ -42,6 +42,10 @@
 		margin-bottom: 10px;
 	}
 
+	pre {
+		margin: 0;
+	}
+
 	code {
 		line-height: 1.5;
 		border-radius: 4px;

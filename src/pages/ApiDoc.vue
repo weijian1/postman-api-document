@@ -13,9 +13,9 @@
 
 			<div class="response-demo" v-if="currentApiDocItem.response.length > 0">
 				<h4>Demo</h4>
-				<el-tabs type="border-card">
+				<el-tabs class="tab-demo" type="border-card">
 				  <el-tab-pane :label="example.name" v-for="(example, index) in currentApiDocItem.response" :key="index">
-				  	<h3>{{ example.name }}</h3>
+				  	<h3 class="title">{{ example.name }}</h3>
 				  	<ApiUrlGroup :method="example.originalRequest.method" :url="example.originalRequest.url"></ApiUrlGroup>
 				  	<ApiParamsTable title="请求参数 (Request Params)" :data="example.originalRequest.url.query" :showValue="true"></ApiParamsTable>
 				  	<ApiParamsTable :title="`请求体 (Request Body) (` + example.originalRequest.body.mode + ')'" 
@@ -82,5 +82,9 @@
 <style scoped>
 	.api-item-wrapper .title {
 		margin-top: 0;
+	}
+
+	.response-demo h4 {
+		margin-bottom: 10px;
 	}
 </style>

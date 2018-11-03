@@ -11,9 +11,12 @@ Vue.use(ElementUI)
 import Api from './api/api'
 Vue.use(Api);
 
-import 'highlight.js/styles/agate.css'
+import 'highlight.js/styles/dracula.css'
 import VueHighlightJS from 'vue-highlightjs'
 Vue.use(VueHighlightJS)
+
+import normalize from 'normalize.css'
+import CommonStyle from './assets/stylesheet/common.css'
 
 new Vue({
   el: '#app',

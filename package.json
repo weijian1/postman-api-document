@@ -1,9 +1,8 @@
 {
   "name": "postman-api-doc",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "description": "generate API document by Postman",
   "author": "weijian1",
-  "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --env.dev",
     "dev:doc": "webpack-dev-server --inline --hot --env.dev --config webpack_document.config.js",
