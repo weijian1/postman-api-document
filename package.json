@@ -6,11 +6,18 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --env.dev",
-    "build": "rimraf dist && webpack -p --progress --hide-modules"
+    "dev:doc": "webpack-dev-server --inline --hot --env.dev --config webpack_document.config.js",
+    "build": "rimraf dist && webpack -p --progress --hide-modules",
+    "build:doc": "rimraf doc && webpack -p --progress --hide-modules --config webpack_document.config.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-brands-svg-icons": "^5.5.0",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "@fortawesome/vue-fontawesome": "^0.1.2",
     "axios": "^0.18.0",
     "element-ui": "^2.3.4",
+    "normalize.css": "^8.0.0",
     "vue": "^2.5.16",
     "vue-highlightjs": "^1.3.3",
     "vue-router": "^3.0.1",
