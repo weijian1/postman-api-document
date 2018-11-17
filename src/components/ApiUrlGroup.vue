@@ -1,11 +1,15 @@
 <template>
 	<div class="url-group">
 		<el-tag :type="tagColorType">{{ method }}</el-tag>
-		<pre v-highlightjs="toUrlStr(url)"><code class="http"></code></pre>
+		<div class="url-wrapper">
+			<pre v-highlightjs="toUrlStr(url)"><code class="http"></code></pre>
+			<font-awesome-icon class="icon-copy" :icon="['fa', 'copy']" size="1x" @click="copyData"></font-awesome-icon>
+		</div>
 	</div>
 </template>
 
 <script>
+	import Clipboard from 'clipboard'
 	export default {
 		props: {
 			method: {
@@ -16,6 +20,10 @@
 			}
 		},
 
+		created() {
+			
+		},
+
 		methods: {
 			toUrlStr(url) {
 				if (typeof url == 'string') {
@@ -23,6 +31,10 @@
 				}
 
 				return `${url.host}/` + url.path.join('/'); 
+			},
+
+			copyData() {
+				this.$utils.clipboard.copyText(this.toUrlStr(this.url));
 			}
 		},
 
@@ -57,10 +69,27 @@
 		line-height: 28px;
 		height: 28px;
 	}
-	.url-group pre {
+
+	.url-wrapper {
+		position: relative;
+		width: 100%;
+	}
+
+	.url-wrapper pre {
 		flex: 1;
 		margin: 0;
 		margin-left: 5px;
+	}
+
+	.url-wrapper .icon-copy {
+		position: absolute;
+		top: 0;
+		left: auto;
+		right: 10px;
+		bottom: 0;
+		color: white;
+		margin: auto;
+		cursor: pointer;
 	}
 
 	code {
